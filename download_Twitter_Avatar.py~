@@ -3,11 +3,10 @@
 from twython import Twython
 import sys, urllib
 
-#Twitter API Key for start Twython
-oauth_token = ""
-oauth_token_secret = ""
-consumer_key = ""
-secret_key = ""
+oauth_token = "68772763-JaWRBE88Oi0JsbPZ6IVyoFgLZj3TGUgqtCaohEfNp"
+oauth_token_secret = "YCwJfNIhqaLqN0UdjZcpBDpADHxILRziuKpOy7nJOOQ"
+consumer_key = "Y07z7hQylwULlW5PzvVNhA"
+secret_key = "o47MS9n4MFHBPOGcmV1R7e14LXOvi4BBILADfqOLQ0"
 
 class downTwitterAvatar(object):
 	urls = []
@@ -60,3 +59,28 @@ class downTwitterAvatar(object):
 		for url in self.urls:
 			urllib.urlretrieve(url, self.users[self.x])
 			self.x+=1
+	
+	""" 
+	getImgURL(username,size):
+		Funcion que se encarga de obtener las URLs de las imagenes
+		sus parametros son username y size
+
+		ATRIBUTOS
+		----------------------------------------------------------------------------
+		username: El nombre de usuario del que se quiere obtener la URL del avatar
+
+		size: Indica el tamaño del avatar, hay tres posibilidades: 'normal', 'mini'
+			  'bigger'. Si no se especifica, por defecto se usara el tamaño 'normal'
+
+	down_all()
+		Funcion encargada de realizar la descarga de los avatares.
+	"""
+
+img = downTwitterAvatar()
+x=0
+for i in img.users:
+	img.getImgURL(img.users[x],"bigger")
+	x+=0
+
+img.print_url_user()
+img.down_all()
