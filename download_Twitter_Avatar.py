@@ -18,6 +18,11 @@ class downTwitterAvatar(object):
 					   		   oauth_token=self.oauth_token,oauth_token_secret=self.oauth_token_secret)
 
 		#self.getUser()
+
+	def getImgURL(self,username,size="normal"):
+		self.imgURL = self.twitter.getProfileImageUrl(username,size)
+		self.users.append(username)
+		self.urls.append(self.imgURL)
 	
 	def getUser(self):
 		while True:
@@ -33,11 +38,6 @@ class downTwitterAvatar(object):
 					break
 			else:
 				print "Introduzca un nombre de usuario valido!"
-
-	def getImgURL(self,username,size="normal"):
-		self.imgURL = self.twitter.getProfileImageUrl(username,size)
-		self.users.append(username)
-		self.urls.append(self.imgURL)
 
 	def print_url_user(self):
 		self.x=0
