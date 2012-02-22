@@ -3,23 +3,21 @@
 from twython import Twython
 import sys, urllib
 
-#Twitter API Key for start Twython
-oauth_token = ""
-oauth_token_secret = ""
-consumer_key = ""
-secret_key = ""
-
 class downTwitterAvatar(object):
 	urls = []
 	users = []
 
 	def __init__(self):
-		self.twitter = Twython(twitter_token=consumer_key,
-					   		   twitter_secret=secret_key,
-					   		   oauth_token=oauth_token,
-					   		   oauth_token_secret=oauth_token_secret)
+		#Twitter API Key
+		self.oauth_token = ""
+		self.oauth_token_secret = ""
+		self.consumer_key = ""
+		self.secret_key = ""
 
-		self.getUser()
+		self.twitter = Twython(twitter_token=self.consumer_key,twitter_secret=self.secret_key,
+					   		   oauth_token=self.oauth_token,oauth_token_secret=self.oauth_token_secret)
+
+		#self.getUser()
 	
 	def getUser(self):
 		while True:
@@ -60,3 +58,12 @@ class downTwitterAvatar(object):
 		for url in self.urls:
 			urllib.urlretrieve(url, self.users[self.x])
 			self.x+=1
+
+#img = downTwitterAvatar()
+#
+#lista = ["luquedaniel","caballero6x6","richirocko"]
+#for i in probando:
+#	img.getImgURL(i,"bigger")
+#	
+#img.print_url_user()
+#img.down_all()
