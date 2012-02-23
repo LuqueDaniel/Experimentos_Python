@@ -1,21 +1,18 @@
 #*-* encoding: utf-8 *-*
 #!/usr/bin/env python
-from twython import Twython
-import sys, urllib
 
 class downTwitterAvatar(object):
 	urls = []
 	users = []
 
 	def __init__(self):
-		#Twitter API Key
-		self.oauth_token = ""
-		self.oauth_token_secret = ""
-		self.consumer_key = ""
-		self.secret_key = ""
+		from twython import Twython
+		import sys, urllib
 
-		self.twitter = Twython(twitter_token=self.consumer_key,twitter_secret=self.secret_key,
-					   		   oauth_token=self.oauth_token,oauth_token_secret=self.oauth_token_secret)
+		#Twitter API Key
+		self.twitter_token = ""
+		self.twitter_secret = ""
+		self.twitter = Twython(twitter_token=self.twitter_token, twitter_secret=self.twitter_secret)
 
 		#self.getUser()
 
@@ -62,7 +59,7 @@ class downTwitterAvatar(object):
 #img = downTwitterAvatar()
 #
 #lista = ["luquedaniel","caballero6x6","richirocko"]
-#for i in probando:
+#for i in lista:
 #	img.getImgURL(i,"bigger")
 #	
 #img.print_url_user()
