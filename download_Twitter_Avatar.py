@@ -1,17 +1,19 @@
 #*-* encoding: utf-8 *-*
 #!/usr/bin/env python
 
+import sys, urllib
+
 class downTwitterAvatar(object):
 	urls = []
 	users = []
 
 	def __init__(self):
 		from twython import Twython
-		import sys, urllib
 
 		#Twitter API Key
 		self.twitter_token = ""
 		self.twitter_secret = ""
+
 		self.twitter = Twython(twitter_token=self.twitter_token, twitter_secret=self.twitter_secret)
 
 		#self.getUser()
