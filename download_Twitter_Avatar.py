@@ -1,15 +1,15 @@
 #*-* encoding: utf-8 *-*
 #!/usr/bin/env python
 
-import sys, urllib
+import sys
+import urllib
+from twython import Twython
 
 class downTwitterAvatar(object):
 	urls = []
 	users = []
 
 	def __init__(self):
-		from twython import Twython
-
 		#Twitter API Key
 		self.twitter_token = ""
 		self.twitter_secret = ""
@@ -18,7 +18,7 @@ class downTwitterAvatar(object):
 
 		#self.getUser()
 
-	def getImgURL(self,username,size="normal"):
+	def getImgURL(self, username, size="normal"):
 		self.imgURL = self.twitter.getProfileImageUrl(username,size)
 		self.users.append(username)
 		self.urls.append(self.imgURL)
@@ -39,7 +39,7 @@ class downTwitterAvatar(object):
 				print "Introduzca un nombre de usuario valido!"
 
 	def print_url_user(self):
-		self.x=0
+		self.x = 0
 		for i in self.urls:
 			print "Url del avatar de @%s: %s" % (self.users[self.x],i)
 			self.x += 1
@@ -50,13 +50,14 @@ class downTwitterAvatar(object):
 
 	def print_users(self):
 		for i in self.users:
-			print "@%s"%(i)
+			print "@%s" % (i)
 
 	def down_all(self):
-		self.x=0
+		self.x = 0
 		for url in self.urls:
 			urllib.urlretrieve(url, self.users[self.x])
-			self.x+=1
+			self.x += 1
+
 
 #img = downTwitterAvatar()
 #

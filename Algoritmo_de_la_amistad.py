@@ -3,30 +3,30 @@
 
 # Algoritmo de la amistad - Sheldon Cooper (The Big Bang Theory)
 
-import random #Modulo para generar numeros de forma aleatoria
+import random  #Modulo para generar numeros de forma aleatoria
+
 
 class algoritmoAmistad(object):
-
 	def __init__(self):
 		self.llamar_por_telefono()
 
-	def __decidir(self): #Funcion para generar la respuesta aleatoria
+	def __decidir(self):  #Funcion para generar la respuesta aleatoria
 		self.random_list = []
 		self.par_list = []
 
-		for i in range(10): # Se genera una lista con 10 elementos cuyos valores son aleatorios
-			self.random_list.append(random.randint(1,50)) # Agrega un numero aleatorio a la lista
+		for i in range(10):  # Se genera una lista con 10 elementos cuyos valores son aleatorios
+			self.random_list.append(random.randint(1,50))  # Agrega un numero aleatorio a la lista
 
 		self.x = 0
 		for i in self.random_list:
-			if (self.random_list[self.x] % 2) == 0: # Comprueba si el numero es par
-				self.par_list.append(self.random_list[self.x]) # Si el numero es par lo agrega a una lista
-				self.x+=1
+			if (self.random_list[self.x] % 2) == 0:  # Comprueba si el numero es par
+				self.par_list.append(self.random_list[self.x])  # Si el numero es par lo agrega a una lista
+				self.x += 1
 			else:
-				self.x+=1
+				self.x += 1
 				continue
 
-	def esperar_respuesta(self,func,func2): # Funcion de pasarela
+	def esperar_respuesta(self, func, func2):  # Funcion de pasarela
 		print "Esperar respuesta..."
 		self.__decidir()
 
@@ -35,14 +35,14 @@ class algoritmoAmistad(object):
 		else:
 			func2()
 
-	def __selector(self, lista): # Función que escoge un elemento de una lista de forma aleatoria
+	def __selector(self, lista):  # Función que escoge un elemento de una lista de forma aleatoria
 		self.num = []
 		self.lista = lista
 
-		self.x=0
+		self.x = 0
 		while len(self.num) < len(self.lista):
 			self.num.append(self.x)
-			self.x+=1
+			self.x += 1
 
 		result = random.choice(self.num)
 
@@ -76,7 +76,7 @@ class algoritmoAmistad(object):
 		print "¿Qué tal una actividad recreativa?"
 		self.actividades = ["Cocina","Carreras de caballos","Programar","Leer"]
 
-		self.x=0
+		self.x = 0
 		while self.x < 4: #Bucle para escoger actividad
 			self.actividad = self.__selector(self.actividades)
 
@@ -85,7 +85,7 @@ class algoritmoAmistad(object):
 			if self.resp == "si":
 				break
 			elif self.resp == "no":
-				self.x+=1
+				self.x += 1
 				continue
 			else:
 				print "Respuesta no valida"
@@ -106,4 +106,5 @@ class algoritmoAmistad(object):
 		print "Yo pago"
 		self.comenzar_amistad()
 
-algoritmo = algoritmoAmistad() #Instanciar la clase
+
+algoritmo = algoritmoAmistad()  #Instanciar la clase
