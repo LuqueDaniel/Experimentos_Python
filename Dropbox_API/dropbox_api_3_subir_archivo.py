@@ -20,4 +20,4 @@ cliente = client.DropboxClient(sesion)
 
 archivo = 'muestra.txt'
 subiendo = cliente.put_file('/muestra1.txt', archivo)
-print "Subiendo: %s" % (subiendo)
+print subiendo
