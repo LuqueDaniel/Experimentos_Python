@@ -2,7 +2,7 @@
 # -*- coding: utf-8 *-*
 
 """
-    Line-Counter is a counter and of number of line in files
+    Line-Counter compare the lines number of two files
 """
 
 from sys import argv
