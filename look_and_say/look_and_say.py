@@ -107,8 +107,8 @@ def main():
 
     count = count_digits(string)
 
-    print 'All one: %i (%i%%)' % (count[0], (count[0]*100)/len(string))
-    print 'All two: %i (%i%%)' % (count[1], (count[1]*100)/len(string))
-    print 'All three: %i (%i%%)' % (count[2], (count[2]*100)/len(string))
+    print 'All one: %i (%f%%)' % (count[0], (count[0]*100.0)/len(string))
+    print 'All two: %i (%f%%)' % (count[1], (count[1]*100.0)/len(string))
+    print 'All three: %i (%f%%)' % (count[2], (count[2]*100.0)/len(string))
 
 main()
